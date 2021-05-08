@@ -1,20 +1,19 @@
-# articles
+# Article Repository
 
 ## What
 
 Articles about software engineering
 
-## By Whom?
+## Why
 
+I want to have a registry of thoughts / articles in a form that isn't terrible clickbait medium articles
+
+## Who
 
 Josh   
 Wearer of hats  
 CTO, Software Engineer, Business System Analyst, Tech Lead, Engineering Coach  
 Anime, Red Mage, Rucking, Dog, and Video Game enthusiast  
-
-## Why
-
-I want to have a registry of thoughts / articles in a form that isn't terrible clickbait medium articles
 
 ## Feedback
 
