@@ -79,7 +79,7 @@ function(str) {
  #### Night of the Living Mutants
  ![Picture of Living Mutants](https://i.imgur.com/MnLKYgO.png "Living Mutants")
 
- You can see in the output of the surviving mutant what kind of mutant it was and instructions of how to change your code to "reproduce" that mutant.
+ You can see in the output of the surviving mutant - Stryker informs you the type of mutant it was and provides instructions to modify your code to "reproduce" that mutant.
 
 ## Benefits
 
