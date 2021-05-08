@@ -25,7 +25,7 @@ It will show you where code isn’t tested or is insufficiently tested. Code cov
 
 ![Picture of Stryker Report](https://i.imgur.com/3lb7Epf.png "Strker Exemplar Project Report")
 
- In this mutation testing run we can see some examples of mutants that are killed (in blue) and survived (in red). Using this mutation testing suite’s report UI - we can see all mutants that were tested (including those that were not killed) were inside of “covered” lines of code. This means that if you only looked at code coverage – you would assume these lines were tested!
+ In this mutation testing run we can see some examples of mutants that are killed (in green) and survived (in red). Using this mutation testing suite’s report UI - we can see all mutants that were tested (including those that were not killed) were inside of “covered” lines of code. This means that if you only looked at code coverage – you would assume these lines were tested!
 
 ## Benefits
 
