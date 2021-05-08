@@ -23,7 +23,7 @@ Each of these mutants is one very small change like the examples above. After ex
 
 It will show you where code isn’t tested or is insufficiently tested. Code coverage alone can give us a false sense of confidence with how safely we can elevate - by incorporating mutation testing into our SDLC we can see covered code that is untested with meaningful assertions. Let’s look at an example of that from Stryker’s exemplar project:
 
-<figure out how to add screenshot>
+--figure out how to add screenshot--
 
  In this mutation testing run we can see some examples of mutants that are killed (in blue) and survived (in red). Using this mutation testing suite’s report UI - we can see all mutants that were tested (including those that were not killed) were inside of “covered” lines of code. This means that if you only looked at code coverage – you would assume these lines were tested!
 
