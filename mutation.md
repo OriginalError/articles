@@ -15,7 +15,7 @@ Mutation testing works by making these small changes. Each individual change is 
 | Original | Mutated | Description |
 | -------- | ------- | ----------- |
 | a * b    | a / b   | Arithmetic Operations Mutant - Reverse the operation occurring |
-| new Array(1, 2, 3) | new Array() | Array Declaration Mutant - Remove any initialization of arrays. |
+| new Array(1, 2, 3) | new Array() | Array Declaration Mutant - Remove any initialization of arrays |
 | false | true | Boolean Literal Mutant - Invert the Boolean literal |
 | function foo() { bar; } | function foo() {} | Block Statement Mutant - Erase all functionality inside of a function |
 
