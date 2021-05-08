@@ -6,7 +6,7 @@ The code gremlin is a mythical creature that can change your production code wit
 
 Besides – performing small changes to run tests against would be prohibitively expensive. Every possible permutation of code would take hundreds of engineer and tester hours. It would increase in complexity exponentially with code base size. This testing would need to be repeated after any change. 
 
-...but what if you could automate testing your tests? Mutation testing is just that - fully automated code gremlins that change your code to validate your automated testing. These small changes are called `Mutants. ` 
+...but what if you could automate testing your tests? Mutation testing is just that - fully automated code gremlins that change your code to validate your automated testing. These small changes are called `Mutants.` 
 
 ## How does it work?
 
@@ -19,11 +19,11 @@ Mutation testing works by making these small changes. Each individual change is 
 | false | true | Boolean Literal Mutant - Invert the Boolean literal |
 | function foo() { bar; } | function foo() {} | Block Statement Mutant - Erase all functionality inside of a function |
 
-Each of these mutants is one very small change like the examples above. After exactly one mutation is introduced your entire testing suite is run again. You ‘kill’ the mutant if one of your tests fails (or if the testing suite times out). If a mutant *doesn’t* cause a test to fail - the mutant survives. If the mutant is not covered by the tests – the mutant survives. These surviving mutants expose how the code gremlin could sabotage us.
+Each of these mutants is one very small change like the examples above. After exactly one mutation is introduced your entire testing suite is run again. You `kill` the mutant if one of your tests fails (or if the testing suite times out). If a mutant *doesn’t* cause a test to fail - the mutant survives. If the mutant is not covered by the tests – the mutant survives. These surviving mutants expose how the code gremlin could sabotage us.
 
-It will show you where code isn’t tested or is insufficiently tested. Code coverage alone can give us a false sense of confidence with how safely we can elevate - by incorporating mutation testing into our SDLC we can see covered code that is untested with meaningful assertions. Let’s look at an example of that from Stryker’s exemplar project:
+It will show you where code isn’t tested or is insufficiently tested. Code coverage alone can give us a false sense of confidence with how safely we can elevate - by incorporating mutation testing into our SDLC we can see covered code that is untested with meaningful assertions. Let’s look at an example of that from [Stryker’s exemplar project](https://stryker-mutator.io/robobar-example/reports/mutation/html/index.html)
 
---figure out how to add screenshot--
+![Picture of Stryker Report](https://i.imgur.com/3lb7Epf.png "Strker Exemplar Project Report")
 
  In this mutation testing run we can see some examples of mutants that are killed (in blue) and survived (in red). Using this mutation testing suite’s report UI - we can see all mutants that were tested (including those that were not killed) were inside of “covered” lines of code. This means that if you only looked at code coverage – you would assume these lines were tested!
 
@@ -39,8 +39,7 @@ Mutation testing can provide you with a better quantification of test quality th
 
 Keep in mind mutation testing is another tool for your development toolbox. We all know that there is no silver bullet for good tests (even if there was... silver bullets are for werewolves, not mutants).
 
-## Additional Reading:
+## Additional Reading
 
 Java Mutation Testing: https://pitest.org/ 
-
 Javascript/C/Scala Mutation Testing: https://stryker-mutator.io/ 
