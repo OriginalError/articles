@@ -10,6 +10,7 @@ Besides – performing small changes to run tests against would be prohibitively
 
 ## How does it work?
 
+### Explanation
 Mutation testing works by making these small changes. Each individual change is called a mutant. How does that work under the hood? You can see some examples of mutants in the chart below:
 
 | Original | Mutated | Description |
@@ -21,11 +22,64 @@ Mutation testing works by making these small changes. Each individual change is 
 
 Each of these mutants is one very small change like the examples above. After exactly one mutation is introduced your entire testing suite is run again. You `kill` the mutant if one of your tests fails (or if the testing suite times out). If a mutant *doesn’t* cause a test to fail - the mutant survives. If the mutant is not covered by the tests – the mutant survives. These surviving mutants expose how the code gremlin could sabotage us.
 
-It will show you where code isn’t tested or is insufficiently tested. Code coverage alone can give us a false sense of confidence with how safely we can elevate - by incorporating mutation testing into our SDLC we can see covered code that is untested with meaningful assertions. Let’s look at an example of that from [Stryker’s exemplar project.](https://stryker-mutator.io/robobar-example/reports/mutation/html/index.html)
+It will show you where code isn’t tested or is insufficiently tested. Code coverage alone can give us a false sense of confidence with how safely we can elevate - by incorporating mutation testing into our SDLC we can see covered code that is untested with meaningful assertions. Let’s look at a [contrived example](https://github.com/OriginalError/contrivedMutationExample) with 100% code coverage -
 
-![Picture of Stryker Report](https://i.imgur.com/3lb7Epf.png "Strker Exemplar Project Report")
+### Example
+#### Code Snippet
+```Javascript
+function(str) {
+  //null quick exit  
+  if (isString(str)) return "";
 
- In this mutation testing run we can see some examples of mutants that are killed (in green) and survived (in red). Using this mutation testing suite’s report UI - we can see all mutants that were tested (including those that were not killed) were inside of “covered” lines of code. This means that if you only looked at code coverage – you would assume these lines were tested!
+  //Chunk that string into words
+  var arr = str.match(/\w[a-z]{0,}/gi);
+
+  //Empty string (or completely numeric string) quick exit
+  if (hasWords(arr)) return "";
+
+  var result = arr[0];
+  for(var x = 1; x < arr.length; x++) {
+    if(result.length < arr[x].length) {
+      result = arr[x];
+    } 
+  }
+  return result;
+}
+```
+
+#### Test Snippet
+```Javascript
+  it('should return the longest word', function(done) {
+    var sentence = 'Fake people have an image to maintain. Real people just don’t care.';
+    stringFormatter.longestWord(sentence);
+    done();
+  });
+  
+  it('should return an empty string when an empty string is provided', function(done) {
+    var result = stringFormatter.longestWord('');
+    assert.strictEqual(result, '');
+    done();
+  });
+
+  it('should return an empty string for non-string input', function(done) {
+    var result = stringFormatter.longestWord(1337);
+    assert.strictEqual(result, '');
+    done();
+  });
+```
+
+#### Coverage
+![Picture of Coverage](https://i.imgur.com/PJkseb3.png "Coverage")
+
+#### Mutation
+![Picture of Mutation](https://i.imgur.com/ws5iD4e.png "Mutants")
+
+ In this mutation testing run we can clearly see despite the code having 100% coverage - we had mutants that lived. This means that if you only looked at code coverage – you would assume these lines were tested! If we look at the CLI output - it will tell us every single mutant that was introduced and lived:
+
+ #### Night of the Living Mutants
+ ![Picture of Living Mutants](https://i.imgur.com/MnLKYgO.png "Living Mutants")
+
+ You can see in the output of the surviving mutant what kind of mutant it was and instructions of how to change your code to "reproduce" that mutant.
 
 ## Benefits
 
