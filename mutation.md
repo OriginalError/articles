@@ -22,7 +22,7 @@ Mutation testing works by making these small changes. Each individual change is 
 
 Each of these mutants is one very small change like the examples above. After exactly one mutation is introduced your entire testing suite is run again. You `kill` the mutant if one of your tests fails (or if the testing suite times out). If a mutant *doesn’t* cause a test to fail - the mutant survives. If the mutant is not covered by the tests – the mutant survives. These surviving mutants expose how the code gremlin could sabotage us.
 
-It will show you where code isn’t tested or is insufficiently tested. Code coverage alone can give us a false sense of confidence with how safely we can elevate - by incorporating mutation testing into our SDLC we can see covered code that is untested with meaningful assertions. Let’s look at a [contrived example](https://github.com/OriginalError/contrivedMutationExample) with 100% code coverage -
+It will show you where code isn’t tested or is insufficiently tested. Code coverage alone can give us a false sense of confidence with how safely we can elevate - by incorporating mutation testing into our SDLC we can see covered code that is untested with meaningful assertions. Let’s look at a [contrived example](https://github.com/OriginalError/contrivedMutationExample) with 100% code coverage.
 
 ### Example
 #### Code Snippet
@@ -74,7 +74,7 @@ function(str) {
 #### Mutation
 ![Picture of Mutation](https://i.imgur.com/ws5iD4e.png "Mutants")
 
- In this mutation testing run we can clearly see despite the code having 100% coverage - we had mutants that lived. This means that if you only looked at code coverage – you would assume these lines were tested! If we look at the CLI output - it will tell us every single mutant that was introduced and lived:
+ In this mutation testing run we can clearly see despite the code having 100% coverage - we had mutants that lived. This means that if you only looked at code coverage – you would assume these lines were tested! If we look at the CLI output - it will list every single mutant that was introduced and survived.
 
  #### Night of the Living Mutants
  ![Picture of Living Mutants](https://i.imgur.com/MnLKYgO.png "Living Mutants")
