@@ -41,5 +41,5 @@ Keep in mind mutation testing is another tool for your development toolbox. We a
 
 ## Additional Reading
 
-Java Mutation Testing: https://pitest.org/ 
+Java Mutation Testing: https://pitest.org/  
 Javascript/C/Scala Mutation Testing: https://stryker-mutator.io/ 
