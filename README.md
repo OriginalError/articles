@@ -10,7 +10,7 @@ I want to have a registry of thoughts / articles in a form that isn't terrible c
 
 ## Who
 
-Josh
+Josh  
 Wearer of hats - CTO, Software Engineer, Business System Analyst, Tech Lead, Engineering Coach  
 Anime, Red Mage, Rucking, Dog, and Video Game enthusiast
 
