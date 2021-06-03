@@ -29,18 +29,18 @@ It will show you where code isn’t tested or is insufficiently tested. Code cov
 ```Javascript
 function(str) {
   //null quick exit  
-  if (isString(str)) return "";
+  if (!isString(str)) return "";
 
   //Chunk that string into words
-  var arr = str.match(/\w[a-z]{0,}/gi);
+  let arr = str.match(/\w[a-z]{0,}/gi);
 
   //Empty string (or completely numeric string) quick exit
-  if (hasWords(arr)) return "";
+  if (!hasWords(arr)) return "";
 
-  var result = arr[0];
-  for(var x = 1; x < arr.length; x++) {
-    if(result.length < arr[x].length) {
-      result = arr[x];
+  let result = arr[0];
+  for(let i = 1; i < arr.length; i++) {
+    if(result.length < arr[i].length) {
+      result = arr[i];
     } 
   }
   return result;
